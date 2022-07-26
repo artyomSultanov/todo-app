@@ -1,9 +1,15 @@
 import React from 'react';
+// import { uuid } from 'uuidv4';
+import { TodoList, TodoFilter } from './components/todo-list';
+import TodoForm from './components/todo-form';
 
+// console.log(uuid());
 function App() {
   return (
     <div className="App">
-      <h1>Hello world</h1>
+      <TodoForm/>
+      <TodoFilter/>
+      <TodoList/>
     </div>
   );
 }
