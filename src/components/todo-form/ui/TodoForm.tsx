@@ -1,5 +1,5 @@
 import React, { ChangeEvent, FormEvent, useState } from 'react'
-import TodoStore from 'stores/todoStore'
+import todoStore from 'stores/todoStore'
 
 const TodoForm = () => {
   const [title, setTitle] = useState('')
@@ -10,7 +10,7 @@ const TodoForm = () => {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault()
-    title && TodoStore.addTodo(title)
+    title && todoStore.addTodo(title)
     setTitle('')
   }
 

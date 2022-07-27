@@ -43,5 +43,5 @@ class TodoStore {
   }
 }
 
-
-export default new TodoStore()
+const todoStore = new TodoStore()
+export default todoStore
