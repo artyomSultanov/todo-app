@@ -1,3 +1,3 @@
-import TodoForm from "./ui/TodoForm";
+import TodoForm from './ui/TodoForm'
 
 export default TodoForm

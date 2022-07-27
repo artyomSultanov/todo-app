@@ -1,22 +1,25 @@
-import { OptionType, TodoFilterType } from 'models/types';
+import { observer } from 'mobx-react-lite'
+import { OptionType, TodoFilterType } from 'models/types'
 import React, { ChangeEvent } from 'react'
-import { filterOptions } from '../model/filter-options';
+import { filterOptions } from '../model/filter-options'
+
+import './todo-filter.scss'
 
 const TodoFilter: React.FC<TodoFilterType> = ({ onFilterClick }) => {
-
   const handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
-    // console.log(e.target.selectedIndex);
-    
     onFilterClick(e.target.selectedIndex)
   }
 
   return (
-    <select onChange={handleChange}>
+    <select className='todo_filter' onChange={handleChange}>
       {Object.values(filterOptions).map((option: OptionType) => (
-        <option key={option.id} value={option.value}>{option.value}</option>
+        <option key={option.id} value={option.value}>
+          {' '}
+          {option.value}{' '}
+        </option>
       ))}
     </select>
   )
 }
 
-export default TodoFilter
+export default observer(TodoFilter)

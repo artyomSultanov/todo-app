@@ -1,0 +1,12 @@
+@import '/src/styles/variables.scss';
+
+.todo_filter {
+  cursor: pointer;
+  width: 100%;
+  font-size: 1rem;
+  border: 1px solid $primaryColor;
+  border-radius: 2rem;
+  padding: 0.4rem 0;
+  padding-left: 0.5rem;
+  margin-bottom: 1rem;
+}

@@ -1,0 +1,11 @@
+@import '/src/styles/variables.scss';
+
+.todo_input {
+  width: 100%;
+  border: 1px solid $primaryColor;
+  border-radius: 2rem;
+  margin-bottom: 1rem;
+}
+.todo_input::placeholder {
+  color: #fff;
+}

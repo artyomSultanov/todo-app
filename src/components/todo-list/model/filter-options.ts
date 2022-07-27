@@ -1,23 +1,23 @@
-import { OptionType } from "models/types";
+import { OptionType } from 'models/types'
 
 export const filterOptions: OptionType[] = [
   {
     id: 0,
     value: 'Все',
-    config: {}
+    config: {},
   },
   {
     id: 1,
     value: 'Выполненные',
     config: {
-      completed: true
-    }
+      completed: true,
+    },
   },
   {
     id: 2,
     value: 'Невыполненные',
     config: {
-      completed: false
-    }
-  }
+      completed: false,
+    },
+  },
 ]
