@@ -1,20 +1,29 @@
 @import '/src/styles/variables.scss';
 
 .todo_item {
-  height: 2rem;
+  min-height: 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 
+  &__label_wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+
   &__label {
     display: inline-block;
     position: relative;
-    padding: 0 0.8rem;
-    height: 0.9rem;
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.5rem;
     cursor: pointer;
   }
   &__checkbox {
     position: absolute;
+    top: 0;
+    left: 0;
     opacity: 0;
 
     &_custom {
@@ -23,7 +32,7 @@
       left: 0;
       height: 1rem;
       width: 1rem;
-      border-radius: 0.5rem;
+      border-radius: 0.2rem;
       background-color: $secondaryColor;
     }
   }
@@ -36,7 +45,8 @@
   }
 
   &__title {
-    margin-right: 1rem;
+    display: inline-block;
+    width: 90%;
   }
 
   &__delete {
@@ -44,35 +54,96 @@
     height: 1rem;
     width: 1rem;
     position: relative;
+    opacity: 0.7;
 
     &::before {
       content: '';
       height: 1rem;
       border-right: 2px solid $dangerColor;
       top: 0;
-      left: 0;
+      left: 0.5rem;
       position: absolute;
       transform: rotate(45deg);
-      transition: transform ease 0.5s;
     }
     &::after {
       content: '';
       height: 1rem;
       border-left: 2px solid $dangerColor;
-      bottom: 0;
-      left: 0;
+      top: 0;
+      left: 0.5rem;
       position: absolute;
       transform: rotate(-45deg);
-      transition: transform ease 0.5s;
     }
   }
 
   &__delete:hover {
-    &::before {
-      transform: rotate(125deg);
+    opacity: 1;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .todo_item {
+    position: relative;
+    border: 3px solid $primaryColor;
+
+    &__label {
+      position: static;
     }
-    &::after {
-      transform: rotate(45deg);
+    &__checkbox_custom {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4rem;
+      height: 4rem;
+      clip-path: polygon(0% 0%, 0% 100%, 100% 0%);
+      background: none;
+
+      &:hover {
+        background-color: $secondaryColor;
+
+        &::before {
+          border-color: white;
+        }
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        height: 2rem;
+        width: 1rem;
+        border-right: 2px solid $primaryColor;
+        border-bottom: 2px solid $primaryColor;
+        top: 0;
+        left: 1rem;
+        transform: rotate(45deg);
+        transition: transform ease 0.5s;
+      }
+    }
+
+    &__checkbox:checked ~ &__checkbox_custom {
+      border: none;
+      background-color: $primaryColor;
+
+      &::before {
+        border-color: #fff;
+      }
+    }
+
+    &__delete {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+      width: 2rem;
+      height: 2rem;
+
+      &::before {
+        height: 2rem;
+        left: 1rem;
+      }
+      &::after {
+        height: 2rem;
+        left: 1rem;
+      }
     }
   }
 }

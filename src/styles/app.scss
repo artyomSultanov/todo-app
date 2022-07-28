@@ -3,11 +3,28 @@
   height: 100%;
   margin: 0 auto;
   padding-top: 2rem;
-  display: flex;
+  display: grid;
   justify-content: center;
 }
 .todo {
-  display: flex;
-  justify-content: center;
-  flex-flow: column;
+  height: 100%;
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    width: 96%;
+    grid-template-columns: 1fr;
+  }
+
+  .todo {
+    width: 100%;
+    display: grid;
+    &_settings {
+      width: 50%;
+      gap: 1rem;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      justify-self: center;
+    }
+  }
 }

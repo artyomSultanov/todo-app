@@ -1,11 +1,33 @@
 @import '/src/styles/variables.scss';
 
-.todo_input {
-  width: 100%;
-  border: 1px solid $primaryColor;
-  border-radius: 2rem;
+.todo_form {
+  display: flex;
+  gap: 0.5rem;
   margin-bottom: 1rem;
+
+  &__input {
+    width: 100%;
+    border: 1px solid $primaryColor;
+    border-radius: 2rem;
+  }
+  &__input::placeholder {
+    color: #fff;
+  }
+
+  &__button {
+    cursor: pointer;
+    border: 1px solid $primaryColor;
+    border-radius: 2rem;
+    transition: background-color 0.5s ease;
+  }
 }
-.todo_input::placeholder {
-  color: #fff;
+
+@media screen and (min-width: 1200px) {
+  .todo_form__input:hover {
+    box-shadow: 0 0 5px $primaryColor;
+  }
+
+  .todo_form__button:hover {
+    background-color: $primaryColor;
+  }
 }

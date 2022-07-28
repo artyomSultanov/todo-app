@@ -9,4 +9,11 @@
   padding: 0.4rem 0;
   padding-left: 0.5rem;
   margin-bottom: 1rem;
+  transition: background-color 0.5s ease;
+}
+
+@media screen and (min-width: 1200px) {
+  .todo_filter:hover {
+    background-color: $primaryColor;
+  }
 }

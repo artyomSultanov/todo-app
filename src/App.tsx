@@ -10,8 +10,10 @@ function App() {
   return (
     <div className='container'>
       <div className='todo'>
-        <TodoForm />
-        <TodoFilter onFilterClick={setIndexOptions} />
+        <div className='todo_settings'>
+          <TodoForm />
+          <TodoFilter onFilterClick={setIndexOptions} />
+        </div>
         <TodoList indexOption={indexOption} />
       </div>
     </div>

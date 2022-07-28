@@ -3,3 +3,12 @@
 .todo_list__empty {
   color: $warningColor;
 }
+
+@media screen and (min-width: 1200px) {
+  .todo_list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(15rem, max-content);
+    gap: 2rem;
+  }
+}

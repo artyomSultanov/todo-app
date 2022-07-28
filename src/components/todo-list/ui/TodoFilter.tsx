@@ -14,8 +14,7 @@ const TodoFilter: React.FC<TodoFilterType> = ({ onFilterClick }) => {
     <select className='todo_filter' onChange={handleChange}>
       {Object.values(filterOptions).map((option: OptionType) => (
         <option key={option.id} value={option.value}>
-          {' '}
-          {option.value}{' '}
+          {option.value}
         </option>
       ))}
     </select>

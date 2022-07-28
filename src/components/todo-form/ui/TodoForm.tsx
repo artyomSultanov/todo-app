@@ -1,34 +1,25 @@
 import { observer } from 'mobx-react-lite'
-import React, { ChangeEvent, FormEvent, useState } from 'react'
-import todoStore from 'stores/todoStore'
+import React from 'react'
+import useTodoForm from '../model/todo-form'
 
 import './todo-form.scss'
 
 const TodoForm = () => {
-  const [title, setTitle] = useState('')
-
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setTitle(e.target.value)
-  }
-
-  const handleSubmit = (e: FormEvent) => {
-    e.preventDefault()
-    title && todoStore.addTodo(title)
-    setTitle('')
-  }
+  const { title, handleSubmit, handleChange } = useTodoForm()
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className='todo_form'>
       <input
         type='text'
         value={title}
         placeholder='Введите задачу'
-        maxLength={18}
+        maxLength={30}
         minLength={3}
         autoComplete='off'
         onChange={handleChange}
-        className='todo_input'
+        className='todo_form__input'
       />
+      <input type='submit' value='Добавить' className='todo_form__button' />
     </form>
   )
 }
